@@ -1,0 +1,36 @@
+---
+layout: page
+show_title: false
+---
+{%- if page.article_header.background_image.reference -%}
+<div style="text-align: center">
+  {{ page.article_header.background_image.reference }}
+</div>
+{%- endif -%}
+
+{%- if page.i18n_title -%}
+  <h1>{%- translate page.i18n_title -%}</h1>
+{%- endif -%}
+
+{%- if site.lang == "pt" -%}
+  {%- capture link1 -%}{{ site.baseurl_root }}/en{{ page.url}}{%- endcapture -%}
+  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link1 }}" >{%- translate langs.english -%}</a>
+{%- elsif site.lang == "en" -%}
+  {%- capture link2 -%}{{ site.baseurl_root }}{{ page.url  }}{%- endcapture -%}
+  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link2 }}" >{%- translate langs.portuguese -%}</a>
+{%- endif -%}
+
+</p>
+
+<div class="layout--archive js-all">
+  {%- include tags.html -%}
+  <div class="js-result layout--archive__result d-none">
+    {%- include article-list.html articles=site.posts type='brief' show_info=true reverse=true group_by='year' -%}
+  </div>
+</div>
+
+<script>
+  {%- include scripts/archieve.js -%}
+</script>
+
+{{ content }}

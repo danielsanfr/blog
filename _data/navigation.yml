@@ -1,0 +1,37 @@
+header:
+  - titles:
+      # @start locale config
+      pt      : &PT       Início
+      pt-BR   : *PT
+      pt-PT   : *PT
+      en      : &EN       Home
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+      # @end locale config
+    url: /index.html
+  - titles:
+      # @start locale config
+      pt      : &PT       Arquivo
+      pt-BR   : *PT
+      pt-PT   : *PT
+      en      : &EN       Archive
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+      # @end locale config
+    url: /archive.html
+  - titles:
+      # @start locale config
+      pt      : &PT       Sobre
+      pt-BR   : *PT
+      pt-PT   : *PT
+      en      : &EN       About
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+      # @end locale config
+    url: /about.html

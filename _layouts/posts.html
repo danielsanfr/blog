@@ -1,0 +1,66 @@
+---
+layout: articles
+show_title: false
+---
+{%- if page.article_header.background_image.reference -%}
+<div style="text-align: center">
+  {{ page.article_header.background_image.reference }}
+</div>
+{%- endif -%}
+
+{%- if page.i18n_title -%}
+  <h1>{%- translate page.i18n_title -%}</h1>
+{%- endif -%}
+
+{%- if site.lang == "pt" -%}
+  {%- capture link1 -%}{{ site.baseurl_root }}/en{{ page.url}}{%- endcapture -%}
+  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link1 }}" >{%- translate langs.english -%}</a>
+{%- elsif site.lang == "en" -%}
+  {%- capture link2 -%}{{ site.baseurl_root }}{{ page.url  }}{%- endcapture -%}
+  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link2 }}" >{%- translate langs.portuguese -%}</a>
+{%- endif -%}
+
+{%- assign _articles=paginator.posts | where:"lang", page.lang -%}
+
+{%- if _articles -%}
+
+  <div class="layout--articles">
+
+    {%- include snippets/assign.html
+      target=site.data.variables.default.page.articles.show_cover
+      source0=true -%}
+    {%- assign _show_cover = __return -%}
+
+    {%- include snippets/assign.html
+      target=site.data.variables.default.page.articles.show_excerpt
+      source0=true -%}
+    {%- assign _show_excerpt = __return -%}
+
+    {%- include snippets/assign.html
+      target=site.data.variables.default.page.articles.show_readmore
+      source0=true -%}
+    {%- assign _show_readmore = __return -%}
+
+    {%- include snippets/assign.html
+      target=site.data.variables.default.page.articles.show_info
+      source0=true -%}
+    {%- assign _show_info = __return -%}
+
+    {%- assign _article_type = "BlogPosting" -%}
+    {%- assign _cover_size = "md" -%}
+    {%- assign _excerpt_type = "html" -%}
+
+    {%- include article-list.html articles=_articles type='item'
+      article_type=_article_type
+      show_cover=_show_cover cover_size=_cover_size
+      show_excerpt=_show_excerpt excerpt_type=_excerpt_type
+      show_readmore=_show_readmore show_info=_show_info -%}
+
+  </div>
+{%- endif -%}
+
+{{ content }}
+
+<div class="layout--home">
+  {%- include paginator.html -%}
+</div>
