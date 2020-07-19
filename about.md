@@ -35,10 +35,10 @@ key: page-about
 
 {%- if site.lang == "pt" -%}
   {%- capture link1 -%}{{ site.baseurl_root }}/en{{ page.url}}{%- endcapture -%}
-  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link1 }}" >{%- translate langs.english -%}</a>
+  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link1 }}">{%- translate langs.english -%}</a>
 {%- elsif site.lang == "en" -%}
-  {%- capture link2 -%}{{ site.baseurl_root }}{{ page.url  }}{%- endcapture -%}
-  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link2 }}" >{%- translate langs.portuguese -%}</a>
+  {%- capture link2 -%}{{ site.baseurl_root }}{{ page.url }}{%- endcapture -%}
+  <strong>{%- translate texts.read_on -%}: </strong><a href="{{ link2 }}">{%- translate langs.portuguese -%}</a>
 {%- endif -%}
 
 </p>

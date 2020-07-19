@@ -9,26 +9,28 @@ source "https://rubygems.org"
 # Happy Jekylling!
 # gem "jekyll", "~> 4.0.0"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "jekyll-text-theme"
+gem 'jekyll-text-theme'
 # To upgrade, run `bundle update github-pages`.
-gem "github-pages", group: :jekyll_plugins
+gem 'github-pages', group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem 'jekyll-octicons'
   gem 'jekyll-multiple-languages-plugin'
 end
 
-gem "jekyll-github-metadata"
+gem 'jekyll-github-metadata', git: 'https://github.com/danielsanfr/github-metadata', branch: 'bugfix/allow-baseurl-at-root'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
-  gem "tzinfo", "~> 1.2"
-  gem "tzinfo-data"
+  gem 'tzinfo', '~> 1.2'
+  gem 'tzinfo-data'
 end
 
 # Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
+gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
 
-gem "faraday", "< 1.0"
+gem 'faraday', '< 1.0'
 

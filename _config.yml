@@ -19,10 +19,10 @@ theme: jekyll-text-theme # Gem-based Jekyll Themes
 text_skin: chocolate # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://blog.danielsan.com.br # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : # does not include hostname
+baseurl : "" # does not include hostname
 title   : Daniel San - Blog
 description: > # this means to ignore newlines until "Language & timezone"
-  Your Site Description
+  My personal and professional blog
 
 
 ## => Language and Timezone
@@ -241,5 +241,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
-  - jemoji
   - jekyll-multiple-languages-plugin
+  - jekyll-github-metadata
+  - jemoji

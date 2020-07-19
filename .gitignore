@@ -9,3 +9,4 @@ vendor
 _notebooks/.ipynb_checkpoints
 .bundle
 .DS_Store
+.env
