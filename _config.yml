@@ -18,7 +18,7 @@ theme: jekyll-text-theme # Gem-based Jekyll Themes
 ##############################
 text_skin: chocolate # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : # the base hostname & protocol for your site e.g. https://www.someone.com
+url     : https://blog.danielsan.com.br # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
 title   : Daniel San - Blog
 description: > # this means to ignore newlines until "Language & timezone"
@@ -205,9 +205,7 @@ defaults:
       path: ""
       type: posts
     values:
-      author: Daniel San
       layout: article
-      base-url: "/"
       lang: pt
       nav_key: posts-pt
       sharing: true
@@ -218,12 +216,10 @@ defaults:
       show_subscribe: true
       pageview: true
   - scope:
-      path: en
+      path: /en/
       type: posts
     values:
-      author: Daniel San
       layout: article
-      base-url: "/en/"
       lang: en
       nav_key: posts-en
       sharing: true
